@@ -33,6 +33,34 @@
     <br/>
 
     <div class="container">
+        <h2>Integrantes del equipo Toyota Legacy</h2>
+        {% if toyota_legacy %}
+            <table class="table">
+                <thead>
+                    <th>Primer nombre</th>
+                    <th>Primer apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>URL</th>
+                </thead>
+                <tbody>
+                    {% for integrante in toyota_legacy %}
+                        <tr>
+                            <td>{{integrante.first_name}}</td>
+                            <td>{{integrante.last_name}}</td>
+                            <td>{{integrante.email}}</td>
+                            <td>{{integrante.phone_number}}</td>
+                            <td><a href="mi_primera_app/usuario{{integrante.first_name}}">Mi pagina</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No hay nadie nunca en la vida :(</p>
+        {% endif %}
+    </div>
+
+    <div class="container">
         <h2>Integrantes del equipo ElProfe</h2>
         {% if el_profe %}
             <table class="table">
